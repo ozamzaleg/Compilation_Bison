@@ -13,7 +13,7 @@ extern int atoi (const char *);
 
 "** Winners **" {return TITLE;}
 
-18[5-9][0-9]|19[0-9]{2}|[2-9][0-9]{3,} { yylval.year = atoi(yytext); return YEAR_NUM;}
+18[5-9][0-9]|19[0-9]{2}|[2-9][0-9]{3,} { yylval.year = atoi(yytext); return YEAR;}
 
 ["`'][a-zA-Z]+(" "[a-zA-Z]+)*["`'] {
     if(yytext[0] == yytext[strlen(yytext)-1]){
