@@ -32,7 +32,7 @@ int calculateYears(int year1, int year2);
 
 
 %token TITLE WIMBLEDON AUSTRALIAN_OPEN FRENCH_OPEN COMMA THROUGH NAME 
-%token <year> YEAR_NUM
+%token <year> YEAR
 %token <name> PLAYER_NAME
 %token <typeGender> GENDER
 
@@ -82,8 +82,8 @@ list_of_years: list_of_years ',' year_spec { $$ = $1 + $3 ; };
 
 list_of_years: year_spec { $$ = $1; };
 
-year_spec: YEAR_NUM { $$ = 1; } 
-    | YEAR_NUM '-' YEAR_NUM { $$ = calculateYears($1, $3); } ;
+year_spec: YEAR { $$ = 1; } 
+    | YEAR '-' YEAR { $$ = calculateYears($1, $3); } ;
 
 %%
 
